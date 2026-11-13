@@ -776,7 +776,7 @@ function showStart(msg){poki.stop();ov.hidden=false;ov.classList.add('menuMode')
  armReset(document.getElementById('resetBtn'));}
 function armReset(btn){btn.onclick=()=>{if(btn.dataset.armed){store.clear();META=metaLoad();menuSel={slot:0,type:null};btn.dataset.armed='';tut=null;coach.hidden=true;newRun();if(btn.id==='b_reset'){tune.hidden=true;S.phase='idle';}showStart('Progress reset. The tutorial will play next time.');return;}
  btn.dataset.armed='1';const o=btn.textContent;btn.textContent='Tap again to reset';setTimeout(()=>{if(btn.isConnected){btn.dataset.armed='';btn.textContent=o;}},2500);};}
-function start(withTut){ov.hidden=true;newRun();S.gm=withTut?'classic':GAMEMODE;tut=withTut?{i:0}:null;beginBuild();}
+function start(withTut){ov.hidden=true;newRun();S.gm=GAMEMODE;tut=withTut?{i:0}:null;beginBuild();}
 
 /* ---------- tutorial ---------- */
 const coach=document.getElementById('coach'),coachText=document.getElementById('coachText'),coachNext=document.getElementById('coachNext');
